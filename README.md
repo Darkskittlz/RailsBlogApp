@@ -17,7 +17,6 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: dark
   database: DarkDB
-  password: 8980
   host: localhost
   port: 5432
 
@@ -25,7 +24,6 @@ development:
   <<: *default
   username: dark
   database: DarkDB
-  password: 8980
   host: localhost
   port: 5432
 
@@ -33,7 +31,6 @@ test:
   <<: *default
   database: DarkDB_Test
   username: dark
-  password: 8980
   host: localhost
   port: 5432
 ```
