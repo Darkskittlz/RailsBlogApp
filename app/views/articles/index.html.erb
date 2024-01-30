@@ -1,0 +1,29 @@
+<h1>Hello, Rails!</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <a href="/articles<%= article.id %>"
+        <%= article.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
+<%# The above code is a mixture of HTML and ERB. ERB is a templating system that evaluates Ruby code embedded in a document. Here, we can see two types of ERB tags:
+The tag means "evaluate the enclosed Ruby code, and output the value it returns." Anything you could write in a regular Ruby program can go inside these ERB tags, though it's usually best to keep the contents of ERB tags short, for readability.
+
+We can see the final result by visiting http://localhost:3000. (Remember that bin/rails server must be running!) Here's what happens when we do that:
+
+The browser makes a request: GET http://localhost:3000.
+Our Rails application receives this request.
+The Rails router maps the root route to the index action of ArticlesController.
+The index action uses the Article model to fetch all articles in the database.
+Rails automatically renders the app/views/articles/index.html.erb view.
+The ERB code in the view is evaluated to output HTML.
+The server sends a response containing the HTML back to the browser.
+We've connected all the MVC pieces together, and we have our first controller action! Next, we'll move on to the second action.
+%>
+
+
